@@ -1,6 +1,6 @@
 [build]
   base = "packages/web"
-  command = "cd ../.. && pnpm install && pnpm build:core && cd packages/web && npx nuxi build"
+  command = "cd ../.. && pnpm build:core && cd packages/web && npx nuxi build"
   publish = "dist"
 
 [build.environment]
