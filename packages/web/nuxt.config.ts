@@ -47,6 +47,7 @@ export default defineNuxtConfig({
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
             license: 'https://opensource.org/licenses/MIT',
             datePublished: '2026-03-14',
+            dateModified: '2026-03-14',
             softwareVersion: '0.1.5',
             author: {
               '@type': 'Organization',
