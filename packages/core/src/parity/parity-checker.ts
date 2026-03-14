@@ -32,7 +32,7 @@ export function checkParity(
   return {
     tool: 'strapishift',
     reportType: 'parity-verification',
-    version: '0.1.0',
+    version: '0.1.1',
     generatedAt: new Date().toISOString(),
     sourceVersion: '3.x',
     targetVersion: '5.x',

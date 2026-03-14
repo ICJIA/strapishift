@@ -74,9 +74,25 @@ interface Release {
 
 const releases: Release[] = [
   {
-    version: '0.1.0',
+    version: '0.1.1',
     date: '2026-03-14',
     latest: true,
+    added: [],
+    changed: [],
+    fixed: [
+      'Netlify deployment: moved netlify.toml into packages/web/ to match monorepo convention',
+      'Set NITRO_PRESET=netlify as environment variable for proper serverless function discovery',
+      'Added _redirects file routing all requests to the Nitro serverless function',
+      'Bumped Node version to 22 (Node 20.11 lacks styleText required by @clack/core)',
+      'Enabled SSR for server-rendered HTML instead of blank SPA shell',
+      'Added .netlify/ to .gitignore to prevent build artifacts from being committed',
+    ],
+    security: [],
+  },
+  {
+    version: '0.1.0',
+    date: '2026-03-14',
+    latest: false,
     added: [
       'Initial release of StrapiShift Phase 1 (MVP)',
       '@strapishift/core — schema analysis engine with 14 rules across 7 categories',

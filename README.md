@@ -122,7 +122,7 @@ strapishift/
 │   └── cli/            @strapishift/cli       Terminal interface (citty)
 ├── docs/                                      13-document design suite
 ├── scripts/                                   Version bump utilities
-├── netlify.toml                               Deployment config
+│   │   └── netlify.toml                        Deployment config
 ├── CHANGELOG.md                               Release history
 ├── LICENSE                                    MIT
 └── package.json
@@ -179,19 +179,19 @@ StrapiShift is designed to deploy on Netlify with zero configuration beyond conn
    - Click **"Add new site" → "Import an existing project"**
    - Select the **ICJIA/strapishift** repo from GitHub
 
-3. **Netlify auto-detects `netlify.toml`** — no manual build settings needed:
+3. **Set Base directory** to `packages/web` in Netlify site settings — Netlify auto-detects `netlify.toml` there:
    ```
    Base directory:    packages/web
-   Build command:     cd ../.. && pnpm install && pnpm build:core && cd packages/web && npx nuxt build
+   Build command:     cd ../.. && pnpm build:core && cd packages/web && npx nuxi build
    Publish directory: dist
-   Node version:      20
+   Node version:      22
    ```
 
 4. **Click Deploy** — Netlify will:
    - Install pnpm and all workspace dependencies
    - Build `@strapishift/core` (the analysis engine)
    - Build the Nuxt 4 web app with the `netlify` preset
-   - Deploy the static pages + serverless function for schema fetching
+   - Deploy SSR pages + serverless function for schema fetching
 
 5. **(Optional) Custom domain** — add `strapishift.com` or your domain in Netlify's domain settings. HTTPS is automatic via Let's Encrypt.
 
@@ -199,7 +199,7 @@ StrapiShift is designed to deploy on Netlify with zero configuration beyond conn
 
 | Component | Netlify Layer | Purpose |
 |-----------|--------------|---------|
-| Pages (`/`, `/analyze`, `/report`, `/verify`, `/changelog`, `/about`) | Static HTML + JS | Client-side app — all analysis runs in the browser |
+| Pages (`/`, `/analyze`, `/report`, `/verify`, `/changelog`, `/about`) | SSR via Serverless Function | Server-rendered HTML — analysis runs in the browser |
 | `/api/fetch-schema` | Serverless Function | Server-side proxy for fetching Strapi schemas (avoids CORS) |
 
 ### Environment

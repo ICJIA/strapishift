@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-03-14
+
+### Fixed
+- Netlify deployment: moved `netlify.toml` into `packages/web/` to match monorepo convention
+- Set `NITRO_PRESET=netlify` as environment variable for proper serverless function discovery
+- Added `_redirects` file routing all requests to the Nitro serverless function
+- Bumped Node version to 22 (Node 20.11 lacks `styleText` required by `@clack/core`)
+- Enabled SSR (`ssr: true`) for server-rendered HTML instead of blank SPA shell
+- Added `.netlify/` to `.gitignore` to prevent build artifacts from being committed
+
 ## [0.1.0] - 2026-03-14
 
 ### Added
