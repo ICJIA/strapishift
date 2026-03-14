@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://strapishift.icjia.app/">Live App</a> &middot;
   <a href="LICENSE">MIT License</a> &middot;
   <a href="CHANGELOG.md">Changelog</a> &middot;
   <a href="docs/">Documentation</a>
