@@ -124,7 +124,7 @@
 const colorMode = useColorMode()
 const mobileMenuOpen = ref(false)
 
-const appVersion = '0.1.4'
+const appVersion = '0.1.5'
 const nuxtVersion = '4.4.2'
 
 const navLinks = [
