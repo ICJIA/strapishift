@@ -98,9 +98,14 @@
     <template v-if="parityReport">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <UButton icon="i-lucide-arrow-left" variant="ghost" color="neutral" label="Back" @click="resetVerification" />
-        <UDropdownMenu :items="exportItems">
-          <UButton icon="i-lucide-download" label="Export" color="neutral" variant="outline" />
-        </UDropdownMenu>
+        <div class="flex items-center gap-2">
+          <UDropdownMenu :items="parityChecklistItems">
+            <UButton icon="i-lucide-list-checks" label="Export Checklist" color="success" variant="outline" />
+          </UDropdownMenu>
+          <UDropdownMenu :items="exportItems">
+            <UButton icon="i-lucide-download" label="Export Report" color="neutral" variant="outline" />
+          </UDropdownMenu>
+        </div>
       </div>
 
       <div class="text-center mb-10">
@@ -138,7 +143,7 @@
 <script setup lang="ts">
 import type { ParityCheckStatus } from '@strapishift/core'
 
-const { parityReport, error, verifyParity, exportParityReport } = useAnalysis()
+const { parityReport, error, verifyParity, exportParityReport, exportParityChecklist } = useAnalysis()
 const { fetchSchemas, fetching } = useStrapiFetch()
 
 const v3Input = ref('')
@@ -206,6 +211,12 @@ const exportItems = [[
   { label: 'HTML', onSelect: () => exportParityReport('html') },
   { label: 'Markdown', onSelect: () => exportParityReport('md') },
   { label: 'CSV', onSelect: () => exportParityReport('csv') },
+]]
+
+const parityChecklistItems = [[
+  { label: 'HTML (interactive)', onSelect: () => exportParityChecklist('html') },
+  { label: 'Markdown', onSelect: () => exportParityChecklist('md') },
+  { label: 'JSON', onSelect: () => exportParityChecklist('json') },
 ]]
 
 function loadExamples() {

@@ -9,6 +9,12 @@ import {
   generateParityHtml,
   generateParityMarkdown,
   generateParityCsv,
+  generateChecklistJson,
+  generateChecklistMarkdown,
+  generateChecklistHtml,
+  generateParityChecklistJson,
+  generateParityChecklistMarkdown,
+  generateParityChecklistHtml,
 } from '@strapishift/core'
 import type { MigrationReport, ParityReport } from '@strapishift/core'
 
@@ -77,6 +83,22 @@ export function useAnalysis() {
     }
   }
 
+  function exportChecklist(format: 'json' | 'html' | 'md') {
+    if (!report.value) return
+    const r = report.value
+    switch (format) {
+      case 'json':
+        downloadFile(generateChecklistJson(r), 'strapishift-checklist.json', 'application/json')
+        break
+      case 'html':
+        downloadFile(generateChecklistHtml(r), 'strapishift-checklist.html', 'text/html')
+        break
+      case 'md':
+        downloadFile(generateChecklistMarkdown(r), 'strapishift-checklist.md', 'text/markdown')
+        break
+    }
+  }
+
   function exportParityReport(format: 'json' | 'html' | 'md' | 'csv') {
     if (!parityReport.value) return
     const r = parityReport.value
@@ -96,6 +118,22 @@ export function useAnalysis() {
     }
   }
 
+  function exportParityChecklist(format: 'json' | 'html' | 'md') {
+    if (!parityReport.value) return
+    const r = parityReport.value
+    switch (format) {
+      case 'json':
+        downloadFile(generateParityChecklistJson(r), 'strapishift-parity-checklist.json', 'application/json')
+        break
+      case 'html':
+        downloadFile(generateParityChecklistHtml(r), 'strapishift-parity-checklist.html', 'text/html')
+        break
+      case 'md':
+        downloadFile(generateParityChecklistMarkdown(r), 'strapishift-parity-checklist.md', 'text/markdown')
+        break
+    }
+  }
+
   return {
     report,
     parityReport,
@@ -103,6 +141,8 @@ export function useAnalysis() {
     analyzeSchema,
     verifyParity,
     exportReport,
+    exportChecklist,
     exportParityReport,
+    exportParityChecklist,
   }
 }

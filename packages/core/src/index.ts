@@ -16,6 +16,7 @@ export { generateHtmlReport } from './reporter/html-reporter.js';
 export { generateMarkdownReport } from './reporter/markdown-reporter.js';
 export { generateCsvReport } from './reporter/csv-reporter.js';
 export { generateParityJson, generateParityHtml, generateParityMarkdown, generateParityCsv } from './reporter/parity-reporter.js';
+export { generateChecklistJson, generateChecklistMarkdown, generateChecklistHtml, generateParityChecklistJson, generateParityChecklistMarkdown, generateParityChecklistHtml } from './reporter/checklist-reporter.js';
 
 // ── Parity ──
 export { checkParity } from './parity/parity-checker.js';

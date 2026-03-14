@@ -14,9 +14,14 @@
           <h1 class="text-3xl sm:text-4xl font-bold">Migration Report</h1>
           <p class="mt-1 text-(--ui-text-muted)">Generated {{ new Date(report.generatedAt).toLocaleString() }}</p>
         </div>
-        <UDropdownMenu :items="exportItems">
-          <UButton icon="i-lucide-download" label="Export" color="neutral" variant="outline" />
-        </UDropdownMenu>
+        <div class="flex items-center gap-2">
+          <UDropdownMenu :items="checklistItems">
+            <UButton icon="i-lucide-list-checks" label="Export Checklist" color="success" variant="outline" />
+          </UDropdownMenu>
+          <UDropdownMenu :items="exportItems">
+            <UButton icon="i-lucide-download" label="Export Report" color="neutral" variant="outline" />
+          </UDropdownMenu>
+        </div>
       </div>
 
       <!-- Summary cards -->
@@ -106,7 +111,7 @@
 <script setup lang="ts">
 import type { ContentTypeStatus, Severity } from '@strapishift/core'
 
-const { report, exportReport } = useAnalysis()
+const { report, exportReport, exportChecklist } = useAnalysis()
 
 const activeFilter = ref<'all' | 'blocker' | 'warning' | 'clean'>('all')
 const expanded = ref(new Set<string>())
@@ -162,6 +167,14 @@ const exportItems = [
     { label: 'HTML', onSelect: () => exportReport('html') },
     { label: 'Markdown', onSelect: () => exportReport('md') },
     { label: 'CSV', onSelect: () => exportReport('csv') },
+  ]
+]
+
+const checklistItems = [
+  [
+    { label: 'HTML (interactive)', onSelect: () => exportChecklist('html') },
+    { label: 'Markdown', onSelect: () => exportChecklist('md') },
+    { label: 'JSON', onSelect: () => exportChecklist('json') },
   ]
 ]
 </script>
