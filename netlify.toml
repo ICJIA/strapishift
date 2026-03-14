@@ -1,8 +1,9 @@
 [build]
-  command = "pnpm install && pnpm build:core && cd packages/web && npx nuxt build"
-  publish = "packages/web/dist"
+  base = "packages/web"
+  command = "cd ../.. && pnpm install && pnpm build:core && cd packages/web && npx nuxi build"
+  publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   NPM_FLAGS = "--no-optional"
   NITRO_PRESET = "netlify"
