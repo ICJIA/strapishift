@@ -1,0 +1,27 @@
+{
+  "name": "strapishift",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm build:core && pnpm build:cli && echo '' && echo '✅ Core + CLI built' && echo '' && echo '🚀 Starting web dev server at http://localhost:3000' && echo '' && pnpm --filter @strapishift/web dev",
+    "dev:web": "pnpm --filter @strapishift/web dev",
+    "dev:cli": "pnpm --filter @strapishift/cli dev",
+    "build": "pnpm build:core && pnpm build:cli && pnpm build:web",
+    "build:core": "pnpm --filter @strapishift/core build",
+    "build:web": "pnpm --filter @strapishift/web build",
+    "build:cli": "pnpm --filter @strapishift/cli build",
+    "test": "pnpm -r test",
+    "test:core": "pnpm --filter @strapishift/core test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r clean",
+    "version:bump": "node scripts/bump-version.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

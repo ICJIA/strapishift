@@ -1,0 +1,21 @@
+{
+  "name": "@strapishift/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx kill-port 3000 || true && rm -rf .nuxt .output .vite dist && nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "clean": "rm -rf .nuxt .output .vite dist"
+  },
+  "dependencies": {
+    "nuxt": "4.4.2",
+    "@nuxt/ui": "4.5.1",
+    "tailwindcss": "^4.0.0",
+    "@strapishift/core": "workspace:*"
+  },
+  "devDependencies": {
+    "kill-port": "^2.0.1"
+  }
+}

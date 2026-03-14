@@ -1,0 +1,8 @@
+[build]
+  base = "packages/web"
+  command = "cd ../.. && pnpm install && pnpm build:core && cd packages/web && npx nuxt build"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-optional"

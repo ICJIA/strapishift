@@ -1,0 +1,25 @@
+{
+  "name": "@strapishift/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "strapishift": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsup src/index.ts --format esm --watch",
+    "test": "vitest run",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@strapishift/core": "workspace:*",
+    "citty": "^0.1.6",
+    "picocolors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
