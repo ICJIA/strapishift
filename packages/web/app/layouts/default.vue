@@ -42,16 +42,27 @@
         <!-- Mobile menu -->
         <nav v-if="mobileMenuOpen" class="md:hidden pb-4" aria-label="Mobile navigation">
           <div class="flex flex-col gap-2">
-            <NuxtLink
-              v-for="link in navLinks"
-              :key="link.to"
-              :to="link.to"
-              class="text-sm font-medium text-(--ui-text-muted) hover:text-(--ui-text-highlighted) transition-colors px-2 py-1"
-              active-class="!text-(--ui-text-highlighted)"
-              @click="mobileMenuOpen = false"
-            >
-              {{ link.label }}
-            </NuxtLink>
+            <template v-for="link in navLinks" :key="link.to">
+              <a
+                v-if="link.to.startsWith('http')"
+                :href="link.to"
+                target="_blank"
+                rel="noopener"
+                class="text-sm font-medium text-(--ui-text-muted) hover:text-(--ui-text-highlighted) transition-colors px-2 py-1"
+                @click="mobileMenuOpen = false"
+              >
+                {{ link.label }}
+              </a>
+              <NuxtLink
+                v-else
+                :to="link.to"
+                class="text-sm font-medium text-(--ui-text-muted) hover:text-(--ui-text-highlighted) transition-colors px-2 py-1"
+                active-class="!text-(--ui-text-highlighted)"
+                @click="mobileMenuOpen = false"
+              >
+                {{ link.label }}
+              </NuxtLink>
+            </template>
           </div>
         </nav>
       </div>
@@ -85,9 +96,9 @@
               GitHub
             </a>
             <span class="text-(--ui-border)" aria-hidden="true">|</span>
-            <NuxtLink to="/changelog" class="text-sm text-(--ui-text-muted) hover:text-(--ui-text-highlighted) transition-colors">
+            <a href="https://github.com/ICJIA/strapishift/blob/main/CHANGELOG.md" target="_blank" rel="noopener" class="text-sm text-(--ui-text-muted) hover:text-(--ui-text-highlighted) transition-colors">
               Changelog
-            </NuxtLink>
+            </a>
           </div>
         </div>
       </div>
@@ -120,7 +131,7 @@ const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Analyze', to: '/analyze' },
   { label: 'Verify', to: '/verify' },
-  { label: 'Changelog', to: '/changelog' },
+  { label: 'Changelog', to: 'https://github.com/ICJIA/strapishift/blob/main/CHANGELOG.md' },
   { label: 'About', to: '/about' },
 ]
 
