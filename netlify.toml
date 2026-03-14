@@ -1,7 +1,7 @@
 [build]
   base = "packages/web"
   command = "cd ../.. && pnpm install && pnpm build:core && cd packages/web && npx nuxt build"
-  publish = ".netlify/build"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
