@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-03-14
+
+### Changed
+- HTML report now shows all content types expanded with complete analysis (clean types show detailed pass summaries)
+- HTML report includes table of contents, rules-applied table, methodology section, migration checklist, and per-finding metadata (rule ID, impact badges, effort)
+- Markdown report rewritten with executive summary table, v3 → v5 code examples (API response, filter syntax, relations, media), rules reference, documentation links
+- CSV report now includes summary section, rule categories, content type status, and rows for clean content types
+- JSON report enriched with `_metadata` containing all 14 rule descriptions, v3 → v5 quick reference, Strapi documentation links, and methodology
+- All parity reporters (JSON, HTML, Markdown, CSV) enhanced with per-category results, v3/v5 value comparison, suggested fix actions, and filterable HTML view
+- Landing page now includes detailed technical overview: rule engine architecture, all 14 rules table, scoring methodology, and trust/accuracy section
+
 ## [0.1.1] - 2026-03-14
 
 ### Fixed
