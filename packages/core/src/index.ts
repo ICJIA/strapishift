@@ -90,7 +90,7 @@ export function analyze(
 
   return {
     tool: 'strapishift',
-    version: '0.1.2',
+    version: '0.1.3',
     generatedAt: new Date().toISOString(),
     sourceVersion: '3.x',
     targetVersion: '5.x',

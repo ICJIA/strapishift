@@ -80,7 +80,7 @@ Download your report in four formats:
 
 ## Features
 
-### Core Product (v0.1.2)
+### Core Product (v0.1.3)
 
 | Feature | Description |
 |---------|-------------|
@@ -88,6 +88,7 @@ Download your report in four formats:
 | **Parity Verification** | Compare v3 source against v5 target field-by-field |
 | **Fetch from Instance** | Connect to a running Strapi instance to pull schemas automatically |
 | **Four Export Formats** | JSON, HTML (with print stylesheet), Markdown, CSV |
+| **Standalone Checklists** | Interactive HTML, Markdown, or JSON checklists for contract developer handoff |
 | **CLI + Web** | Terminal interface and Nuxt 4 web dashboard |
 | **Module Architecture** | Extensible — future phases plug in without modifying core |
 
@@ -241,9 +242,9 @@ The `/api/fetch-schema` endpoint is hardened against abuse:
 | `pnpm build` | Build everything (core → CLI → web) |
 | `pnpm test` | Run all 62 tests |
 | `pnpm clean` | Clear all build artifacts |
-| `pnpm version:bump patch` | Bump version 0.1.2 → 0.1.2 across all packages |
-| `pnpm version:bump minor` | Bump version 0.1.2 → 0.2.0 across all packages |
-| `pnpm version:bump major` | Bump version 0.1.2 → 1.0.0 across all packages |
+| `pnpm version:bump patch` | Bump version 0.1.3 → 0.1.3 across all packages |
+| `pnpm version:bump minor` | Bump version 0.1.3 → 0.2.0 across all packages |
+| `pnpm version:bump major` | Bump version 0.1.3 → 1.0.0 across all packages |
 
 ---
 

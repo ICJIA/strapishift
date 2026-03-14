@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-03-14
+
+### Added
+- Standalone checklist export on Report and Verify pages (separate from full reports)
+- HTML checklist with interactive checkboxes, localStorage progress persistence, progress bar, print-friendly layout, and v3→v5 quick reference
+- Markdown checklist with GitHub checkbox items grouped by phase and content type, documentation links
+- JSON checklist with unique item IDs and `done` flags for programmatic tracking
+- Parity fix checklists (HTML, Markdown, JSON) for contract developer handoff
+- "Load Example Schema" button always visible on Analyze page regardless of input mode
+- Inline "Load Example Schema" link in Analyze page description
+
 ## [0.1.2] - 2026-03-14
 
 ### Changed
