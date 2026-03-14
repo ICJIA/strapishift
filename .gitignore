@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.nuxt/
+.output/
+.tmp/
+*.local
+.env
+.env.*
+coverage/
+migration-temp/
+*.tgz
+.DS_Store
