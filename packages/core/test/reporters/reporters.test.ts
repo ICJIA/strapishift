@@ -46,7 +46,7 @@ describe('Migration Report Reporters', () => {
     it('produces valid Markdown with checklist items', () => {
       const md = generateMarkdownReport(report);
       expect(md).toContain('# StrapiShift Migration Report');
-      expect(md).toContain('## Summary');
+      expect(md).toContain('## Executive Summary');
       expect(md).toContain('- [ ]');
     });
   });
@@ -57,7 +57,10 @@ describe('Migration Report Reporters', () => {
       const lines = csv.split('\n');
       expect(lines.length).toBeGreaterThan(1);
 
-      const headers = lines[0].split(',');
+      // CSV now has a summary section; find the FINDINGS header row
+      const findingsIndex = lines.findIndex(l => l === '# FINDINGS');
+      expect(findingsIndex).toBeGreaterThan(-1);
+      const headers = lines[findingsIndex + 1].split(',');
       expect(headers).toContain('Content Type');
       expect(headers).toContain('Severity');
       expect(headers).toContain('Title');
