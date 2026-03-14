@@ -7,10 +7,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'dark'
   },
-  ssr: false,
-  nitro: {
-    preset: 'netlify'
-  },
+  ssr: true,
   site: {
     url: 'https://strapishift.com',
     name: 'StrapiShift',

@@ -1,18 +1,8 @@
 [build]
-  base = "packages/web"
-  command = "cd ../.. && pnpm install && pnpm build:core && cd packages/web && npx nuxt build"
-  publish = "dist"
+  command = "pnpm install && pnpm build:core && cd packages/web && npx nuxt build"
+  publish = "packages/web/dist"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--no-optional"
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/server"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
+  NITRO_PRESET = "netlify"
