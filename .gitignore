@@ -11,3 +11,5 @@ coverage/
 migration-temp/
 *.tgz
 .DS_Store
+.vscode/
+strapishift-report/
