@@ -2,134 +2,50 @@
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0f172a"/>
-      <stop offset="50%" style="stop-color:#1e293b"/>
-      <stop offset="100%" style="stop-color:#064e3b"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#22c55e"/>
-      <stop offset="100%" style="stop-color:#4ade80"/>
-    </linearGradient>
-    <linearGradient id="arrow-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#22c55e;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#131d32"/>
+      <stop offset="100%" style="stop-color:#0c1a2e"/>
     </linearGradient>
   </defs>
 
   <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- Grid pattern -->
-  <g opacity="0.05" stroke="#94a3b8" stroke-width="1">
-    <line x1="60" y1="0" x2="60" y2="630"/><line x1="120" y1="0" x2="120" y2="630"/>
-    <line x1="180" y1="0" x2="180" y2="630"/><line x1="240" y1="0" x2="240" y2="630"/>
-    <line x1="300" y1="0" x2="300" y2="630"/><line x1="360" y1="0" x2="360" y2="630"/>
-    <line x1="420" y1="0" x2="420" y2="630"/><line x1="480" y1="0" x2="480" y2="630"/>
-    <line x1="540" y1="0" x2="540" y2="630"/><line x1="600" y1="0" x2="600" y2="630"/>
-    <line x1="660" y1="0" x2="660" y2="630"/><line x1="720" y1="0" x2="720" y2="630"/>
-    <line x1="780" y1="0" x2="780" y2="630"/><line x1="840" y1="0" x2="840" y2="630"/>
-    <line x1="900" y1="0" x2="900" y2="630"/><line x1="960" y1="0" x2="960" y2="630"/>
-    <line x1="1020" y1="0" x2="1020" y2="630"/><line x1="1080" y1="0" x2="1080" y2="630"/>
-    <line x1="1140" y1="0" x2="1140" y2="630"/>
-    <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/>
-    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/>
-    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/>
-    <line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/>
-    <line x1="0" y1="540" x2="1200" y2="540"/>
+  <!-- Subtle radial glow behind title -->
+  <ellipse cx="600" cy="260" rx="500" ry="200" fill="#22c55e" opacity="0.03"/>
+
+  <!-- Main title line 1 -->
+  <text x="600" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="80" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-2">
+    Migrate Strapi v3
+  </text>
+
+  <!-- Green arrow -->
+  <g transform="translate(600, 280)" text-anchor="middle">
+    <!-- Arrow shape -->
+    <polygon points="-30,-28 10,-28 40,0 10,28 -30,28 0,0" fill="#22c55e"/>
+    <!-- v5 text -->
+    <text x="85" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="80" font-weight="800" fill="#ffffff" text-anchor="start" letter-spacing="-2">v5</text>
   </g>
 
-  <!-- Accent bar top -->
-  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+  <!-- Subtitle -->
+  <text x="600" y="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="26" fill="#94a3b8" text-anchor="middle">
+    Automated schema analysis, parity verification, and migration reporting.
+  </text>
+  <text x="600" y="418" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="26" fill="#94a3b8" text-anchor="middle">
+    Know exactly what needs to change before you start.
+  </text>
 
-  <!-- Title -->
-  <text x="100" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="72" font-weight="800" fill="#ffffff">StrapiShift</text>
+  <!-- Buttons -->
+  <!-- Analyze button (green) -->
+  <rect x="370" y="460" width="230" height="52" rx="8" fill="#22c55e"/>
+  <text x="485" y="494" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="20" font-weight="600" fill="#052e16" text-anchor="middle">Analyze Your Schema</text>
 
-  <!-- Version migration: v3 → v5 centered arrow -->
-  <rect x="80" y="200" width="500" height="60" rx="8" fill="url(#arrow-glow)"/>
-  <text x="100" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="600" fill="#94a3b8">Strapi v3</text>
-  <text x="335" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="700" fill="#22c55e"> → </text>
-  <text x="410" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" font-weight="600" fill="#e2e8f0">v5</text>
-  <text x="465" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="40" fill="#64748b">Migration Platform</text>
+  <!-- Learn More button (outline) -->
+  <rect x="620" y="460" width="200" height="52" rx="8" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <text x="720" y="494" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="20" font-weight="600" fill="#e2e8f0" text-anchor="middle">Learn More</text>
 
-  <!-- Description line -->
-  <text x="100" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" fill="#64748b">Automated schema analysis, parity verification, and migration reporting</text>
-
-  <!-- Phase pipeline -->
-  <g transform="translate(100, 350)">
-    <!-- Phase 1 - Active -->
-    <rect x="0" y="0" width="190" height="68" rx="8" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
-    <text x="15" y="25" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#22c55e" letter-spacing="0.5">PHASE 1 — AVAILABLE</text>
-    <text x="15" y="50" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#e2e8f0">Schema Analysis</text>
-
-    <!-- Connector -->
-    <line x1="200" y1="34" x2="220" y2="34" stroke="#334155" stroke-width="2"/>
-
-    <!-- Phase 2 -->
-    <rect x="220" y="0" width="190" height="68" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <text x="235" y="25" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="0.5">PHASE 2</text>
-    <text x="235" y="50" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">Live Scanning</text>
-
-    <!-- Connector -->
-    <line x1="420" y1="34" x2="440" y2="34" stroke="#334155" stroke-width="2"/>
-
-    <!-- Phase 3 -->
-    <rect x="440" y="0" width="190" height="68" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <text x="455" y="25" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="0.5">PHASE 3</text>
-    <text x="455" y="50" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">v5 Schema Gen</text>
-
-    <!-- Connector -->
-    <line x1="640" y1="34" x2="660" y2="34" stroke="#334155" stroke-width="2"/>
-
-    <!-- Phase 4 -->
-    <rect x="660" y="0" width="190" height="68" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <text x="675" y="25" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="0.5">PHASE 4</text>
-    <text x="675" y="50" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">Script Generation</text>
-
-    <!-- Connector -->
-    <line x1="860" y1="34" x2="880" y2="34" stroke="#334155" stroke-width="2"/>
-
-    <!-- Phase 5 -->
-    <rect x="880" y="0" width="190" height="68" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <text x="895" y="25" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#475569" letter-spacing="0.5">PHASE 5</text>
-    <text x="895" y="50" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">Migration Runner</text>
-  </g>
-
-  <!-- Feature badges row -->
-  <g transform="translate(100, 460)">
-    <rect x="0" y="0" width="150" height="30" rx="6" fill="#22c55e" opacity="0.12"/>
-    <text x="14" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#22c55e">14 Analysis Rules</text>
-
-    <rect x="165" y="0" width="165" height="30" rx="6" fill="#3b82f6" opacity="0.12"/>
-    <text x="179" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#60a5fa">Parity Verification</text>
-
-    <rect x="345" y="0" width="145" height="30" rx="6" fill="#a855f7" opacity="0.12"/>
-    <text x="359" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#c084fc">4 Export Formats</text>
-
-    <rect x="505" y="0" width="130" height="30" rx="6" fill="#eab308" opacity="0.12"/>
-    <text x="519" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#facc15">Base64 Detection</text>
-
-    <rect x="650" y="0" width="110" height="30" rx="6" fill="#06b6d4" opacity="0.12"/>
-    <text x="664" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#22d3ee">CLI + Web</text>
-
-    <rect x="775" y="0" width="155" height="30" rx="6" fill="#f43f5e" opacity="0.12"/>
-    <text x="789" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#fb7185">API-to-API Migration</text>
-  </g>
-
-  <!-- Severity indicator row -->
-  <g transform="translate(100, 510)">
-    <rect x="0" y="0" width="80" height="26" rx="5" fill="#22c55e" opacity="0.15"/>
-    <text x="14" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#22c55e">CLEAN</text>
-
-    <rect x="95" y="0" width="100" height="26" rx="5" fill="#eab308" opacity="0.15"/>
-    <text x="107" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#eab308">WARNING</text>
-
-    <rect x="210" y="0" width="100" height="26" rx="5" fill="#ef4444" opacity="0.15"/>
-    <text x="222" y="18" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#ef4444">BLOCKER</text>
-  </g>
-
-  <!-- Footer -->
-  <line x1="100" y1="570" x2="1100" y2="570" stroke="#1e293b" stroke-width="1"/>
-  <text x="100" y="600" font-family="-apple-system, sans-serif" font-size="16" fill="#475569">github.com/ICJIA/strapishift</text>
-  <text x="600" y="600" font-family="-apple-system, sans-serif" font-size="16" fill="#475569" text-anchor="middle">Open Source · MIT License · ICJIA</text>
-  <text x="1100" y="600" font-family="-apple-system, sans-serif" font-size="16" fill="#475569" text-anchor="end">Nuxt 4 + TypeScript</text>
+  <!-- Bottom bar -->
+  <rect x="0" y="570" width="1200" height="60" fill="#0b1120"/>
+  <text x="100" y="606" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="16" fill="#475569">strapishift.icjia.app</text>
+  <text x="600" y="606" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="16" fill="#475569" text-anchor="middle">Open Source · MIT License · ICJIA</text>
+  <text x="1100" y="606" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif" font-size="16" fill="#475569" text-anchor="end">14 Rules · 7 Categories · 4 Export Formats</text>
 </svg>
