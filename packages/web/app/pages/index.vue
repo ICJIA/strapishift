@@ -233,6 +233,13 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'StrapiShift — Migrate Strapi to v5',
+  meta: [
+    { name: 'description', content: 'Automated schema analysis, parity verification, and migration reporting. Know exactly what needs to change before you start your Strapi migration.' },
+  ],
+})
+
 const features = [
   { emoji: '\u{1F50D}', title: 'Schema Analysis', description: '14 rules across 7 categories detect breaking changes, deprecations, and migration requirements.' },
   { emoji: '\u{2705}', title: 'Parity Verification', description: 'Compare your v3 and v5 schemas field-by-field to ensure nothing was lost in migration.' },

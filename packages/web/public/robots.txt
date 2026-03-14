@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://strapishift.icjia.app/sitemap.xml

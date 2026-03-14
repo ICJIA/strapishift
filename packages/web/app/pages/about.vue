@@ -46,3 +46,12 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: 'About | StrapiShift',
+  meta: [
+    { name: 'description', content: 'StrapiShift is an open-source migration platform built from real-world Strapi v3 to v5 migration experience at ICJIA.' },
+  ],
+})
+</script>

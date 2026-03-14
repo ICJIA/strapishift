@@ -111,6 +111,13 @@
 <script setup lang="ts">
 import type { ContentTypeStatus, Severity } from '@strapishift/core'
 
+useHead({
+  title: 'Migration Report | StrapiShift',
+  meta: [
+    { name: 'description', content: 'View your Strapi migration report with findings, severity classifications, effort estimates, and exportable checklists.' },
+  ],
+})
+
 const { report, exportReport, exportChecklist } = useAnalysis()
 
 const activeFilter = ref<'all' | 'blocker' | 'warning' | 'clean'>('all')

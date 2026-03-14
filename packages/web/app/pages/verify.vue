@@ -143,6 +143,13 @@
 <script setup lang="ts">
 import type { ParityCheckStatus } from '@strapishift/core'
 
+useHead({
+  title: 'Parity Verification | StrapiShift',
+  meta: [
+    { name: 'description', content: 'Compare your Strapi v3 and v5 schemas field-by-field to verify migration completeness. Get a parity score and fix checklist.' },
+  ],
+})
+
 const { parityReport, error, verifyParity, exportParityReport, exportParityChecklist } = useAnalysis()
 const { fetchSchemas, fetching } = useStrapiFetch()
 

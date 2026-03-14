@@ -240,6 +240,13 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'Schema Analysis | StrapiShift',
+  meta: [
+    { name: 'description', content: 'Analyze your Strapi v3 schema against 14 rules across 7 categories. Get a detailed migration report with blockers, warnings, and actionable fix instructions.' },
+  ],
+})
+
 const router = useRouter()
 const { analyzeSchema, error } = useAnalysis()
 const { fetchSchemas, fetching } = useStrapiFetch()

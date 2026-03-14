@@ -1,0 +1,36 @@
+# StrapiShift
+
+> Automated Strapi v3 to v5 migration platform
+
+StrapiShift is an open-source tool that analyzes Strapi v3 content-type schemas and produces detailed migration reports for upgrading to Strapi v5. It detects breaking changes, estimates effort, and generates actionable checklists.
+
+## What it does
+
+- Analyzes Strapi v3 schemas against 14 rules across 7 categories (database, API, media, relations, auth, plugins, GraphQL)
+- Detects breaking changes including Base64 images in rich text, API response envelope changes, relation syntax changes, and plugin compatibility
+- Generates migration reports in JSON, HTML, Markdown, and CSV formats
+- Produces standalone checklists for contract developer handoff
+- Verifies parity between v3 source and v5 target schemas field-by-field
+- Fetches schemas directly from running Strapi instances
+
+## Key pages
+
+- / — Landing page with technical overview
+- /analyze — Schema analysis tool (paste JSON or fetch from instance)
+- /report — Migration report with findings and export options
+- /verify — Parity verification comparing v3 and v5 schemas
+- /about — Project information
+
+## Technical details
+
+- Built with Nuxt 4, TypeScript, and Nuxt UI
+- Analysis runs entirely client-side (no data sent to servers)
+- 14 rules detect: field renames, MongoDB nested docs, ObjectId refs, API response envelope, filter/sort/pagination syntax, populate behavior, Base64 in richtext, media reference format, relation cardinality, polymorphic relations, circular references, auth model changes, plugin compatibility, GraphQL schema changes
+- 62 tests across core engine and CLI
+
+## Links
+
+- Website: https://strapishift.icjia.app
+- Source: https://github.com/ICJIA/strapishift
+- License: MIT
+- Author: Illinois Criminal Justice Information Authority (ICJIA)
