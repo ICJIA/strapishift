@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   },
   ssr: true,
   site: {
-    url: 'https://strapishift.com',
+    url: 'https://strapishift.icjia.app',
     name: 'StrapiShift',
   },
 
