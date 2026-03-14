@@ -183,7 +183,7 @@ StrapiShift is designed to deploy on Netlify with zero configuration beyond conn
    ```
    Base directory:    packages/web
    Build command:     cd ../.. && pnpm install && pnpm build:core && cd packages/web && npx nuxt build
-   Publish directory: .output/public
+   Publish directory: dist
    Node version:      20
    ```
 
@@ -210,7 +210,7 @@ No environment variables are required. The app is fully self-contained — analy
 
 ```bash
 pnpm build                             # builds core → CLI → web
-npx serve packages/web/.output/public  # preview the static site locally
+npx serve packages/web/dist            # preview the static site locally
 ```
 
 The serverless function (`/api/fetch-schema`) only works on Netlify or in dev mode (`pnpm dev`). Local preview serves static files only — "Fetch from Instance" falls back to direct client-side fetch (requires CORS on the Strapi instance).
