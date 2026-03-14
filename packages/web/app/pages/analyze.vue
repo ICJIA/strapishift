@@ -5,6 +5,9 @@
       <p class="mt-2 text-lg text-(--ui-text-muted)">
         Paste your Strapi v3 content-type schema JSON to get a full migration report.
       </p>
+      <p class="mt-1 text-sm text-(--ui-text-muted)">
+        No schema handy? Click <button class="text-green-400 hover:underline" @click="loadExample(); inputMode = 'paste'">Load Example Schema</button> to try it with a sample v3 project.
+      </p>
     </div>
 
     <!-- Where to find your schemas -->
@@ -79,6 +82,14 @@
         :color="inputMode === 'fetch' ? 'success' : 'neutral'"
         label="Fetch from Instance"
         @click="inputMode = 'fetch'"
+      />
+      <div class="flex-1" />
+      <UButton
+        size="sm"
+        variant="outline"
+        color="neutral"
+        label="Load Example Schema"
+        @click="loadExample(); inputMode = 'paste'"
       />
     </div>
 
