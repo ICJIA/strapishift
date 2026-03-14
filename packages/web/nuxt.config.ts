@@ -27,6 +27,8 @@ export default defineNuxtConfig({
         { name: 'twitter:title', content: 'StrapiShift — Migrate Strapi to v5' },
         { name: 'twitter:description', content: 'Automated schema analysis, parity verification, and migration reporting for Strapi v3 to v5 migrations.' },
         { name: 'twitter:image', content: 'https://strapishift.icjia.app/og-image.png' },
+        { property: 'og:image:alt', content: 'StrapiShift — Migrate Strapi to v5. Automated schema analysis with 14 rules, parity verification, 4 export formats, and client-side only processing.' },
+        { name: 'twitter:image:alt', content: 'StrapiShift — Migrate Strapi to v5. Automated schema analysis with 14 rules, parity verification, 4 export formats, and client-side only processing.' },
         { name: 'theme-color', content: '#0f172a' },
       ],
       link: [
