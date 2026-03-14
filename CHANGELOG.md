@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-03-14
+
+### Added
+- JSON-LD `SoftwareApplication` structured data for rich search snippets
+- `robots.txt` with sitemap reference for search engine and AI crawler guidance
+- `llms.txt` following llmstxt.org standard for LLM-friendly site description
+- SVG favicon with green arrow on dark background
+- Page-level `useHead()` SEO meta on all 5 pages (unique titles and descriptions)
+- Canonical URL and `theme-color` meta tags
+- Absolute URLs for `og:image` and `twitter:image`
+
+### Changed
+- Redesigned OG image: modern dark layout with feature cards (14 rules, 5 checks, 4 formats, 0 data sent), severity badges, and project links
+- Updated OG/Twitter titles to "Migrate Strapi to v5" (less version-specific)
+
 ## [0.1.3] - 2026-03-14
 
 ### Added

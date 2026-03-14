@@ -80,7 +80,7 @@ Download your report in four formats:
 
 ## Features
 
-### Core Product (v0.1.3)
+### Core Product (v0.1.4)
 
 | Feature | Description |
 |---------|-------------|
@@ -242,9 +242,9 @@ The `/api/fetch-schema` endpoint is hardened against abuse:
 | `pnpm build` | Build everything (core → CLI → web) |
 | `pnpm test` | Run all 62 tests |
 | `pnpm clean` | Clear all build artifacts |
-| `pnpm version:bump patch` | Bump version 0.1.3 → 0.1.3 across all packages |
-| `pnpm version:bump minor` | Bump version 0.1.3 → 0.2.0 across all packages |
-| `pnpm version:bump major` | Bump version 0.1.3 → 1.0.0 across all packages |
+| `pnpm version:bump patch` | Bump version 0.1.4 → 0.1.4 across all packages |
+| `pnpm version:bump minor` | Bump version 0.1.4 → 0.2.0 across all packages |
+| `pnpm version:bump major` | Bump version 0.1.4 → 1.0.0 across all packages |
 
 ---
 
